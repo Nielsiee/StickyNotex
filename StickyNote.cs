@@ -40,5 +40,10 @@ namespace StickyNotex
                 lblNotes.Text = "Start adding notes by pressing 'add a new note' "; // sets the standard text
             }
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }
