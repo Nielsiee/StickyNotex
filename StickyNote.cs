@@ -26,8 +26,11 @@ namespace StickyNotex
 
         private void Mainform_Load(object sender, EventArgs e)
         {
-                //process start : onload form start searching for left notes 
-                FileInfo fi = new FileInfo("notes.txt");   // declaring fileinfo to the file
+            //process start : onload form start searching for left notes 
+            string path = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "\\" + "notes\\"; // sets a string to locate the user name, and location to the ,atj
+            DirectoryInfo di = Directory.CreateDirectory(path); // creates the folder
+            string folder = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "\\" + "notes\\" + "notes.txt"; // string for putting up the folder location and the file
+            FileInfo fi = new FileInfo(folder);   // declaring fileinfo to the file
                 FileStream fs = fi.Open(FileMode.OpenOrCreate, FileAccess.Read, FileShare.Read); // declaring filestream to allow the streamreader to work
                 StreamReader sr = new StreamReader(fs); //declaring the streamreader and using the variable
                 string fileContent = sr.ReadToEnd(); //reads all the file content
