@@ -45,5 +45,20 @@ namespace StickyNotex
         {
             Application.Exit();
         }
+
+        private void movefrmleft_Click(object sender, EventArgs e)
+        {
+            this.SetDesktopLocation(0, 0);
+        }
+
+        private void btnmoveright_Click(object sender, EventArgs e)
+        {
+            this.SetDesktopLocation(1150, 0);
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            this.Location = Screen.AllScreens[1].WorkingArea.Location;
+        }
     }
 }
