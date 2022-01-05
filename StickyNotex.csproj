@@ -67,9 +67,10 @@
     <GenerateManifests>true</GenerateManifests>
   </PropertyGroup>
   <PropertyGroup>
-    <SignManifests>true</SignManifests>
+    <SignManifests>false</SignManifests>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Microsoft.VisualBasic" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -83,30 +84,39 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="StickyNote.cs">
+    <Compile Include="mainapplication.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="StickyNote.Designer.cs">
+    <Compile Include="mainapplication.Designer.cs">
+      <DependentUpon>mainapplication.cs</DependentUpon>
+    </Compile>
+    <Compile Include="old files %28unoptimized%29\StickyNote.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="old files %28unoptimized%29\StickyNote.Designer.cs">
       <DependentUpon>StickyNote.cs</DependentUpon>
     </Compile>
-    <Compile Include="AddStickyNote.cs">
+    <Compile Include="old files %28unoptimized%29\AddStickyNote.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AddStickyNote.Designer.cs">
+    <Compile Include="old files %28unoptimized%29\AddStickyNote.Designer.cs">
       <DependentUpon>AddStickyNote.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Splashscreen.cs">
+    <Compile Include="old files %28unoptimized%29\Splashscreen.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Splashscreen.Designer.cs">
+    <Compile Include="old files %28unoptimized%29\Splashscreen.Designer.cs">
       <DependentUpon>Splashscreen.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="StickyNote.resx">
+    <EmbeddedResource Include="mainapplication.resx">
+      <DependentUpon>mainapplication.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="old files %28unoptimized%29\StickyNote.resx">
       <DependentUpon>StickyNote.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="AddStickyNote.resx">
+    <EmbeddedResource Include="old files %28unoptimized%29\AddStickyNote.resx">
       <DependentUpon>AddStickyNote.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -118,7 +128,7 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Splashscreen.resx">
+    <EmbeddedResource Include="old files %28unoptimized%29\Splashscreen.resx">
       <DependentUpon>Splashscreen.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
