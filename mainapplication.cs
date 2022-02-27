@@ -13,7 +13,7 @@ namespace StickyNotex
 
         private void mainapplication_Load(object sender, EventArgs e) // tells what the "application" to do on startup
         {
-            string path = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "\\" + "notes\\"; // sets a string to locate the user name, and location to the ,atj
+            string path = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "\\" + "notes\\"; // sets a string to locate the document folder and folder notes
             DirectoryInfo di = Directory.CreateDirectory(path); // creates the folder
             string folder = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "\\" + "notes\\" + "notes.txt"; // string for putting up the folder location and the file
             FileInfo fi = new FileInfo(folder);   // declaring fileinfo to the file
@@ -32,14 +32,14 @@ namespace StickyNotex
 
         private void addNote_Click(object sender, EventArgs e)
         {
-            string input = Interaction.InputBox("Add a note down below.", "Add", "You can type here.");
+            string input = Interaction.InputBox("Add a note down below.", "Add", "You can type here."); //string takes input from the inputbox
             if (input == "") // if there is no text
             {
                 MessageBox.Show("there is nothing to save "); // messagebox for warning
             }
             else if (input != "") // if there is text
             {
-                string path = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "\\" + "notes\\"; // sets a string to locate the user name, and location to the ,atj
+                string path = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "\\" + "notes\\"; // sets a string to locate the documents folder and the folder notes
                 DirectoryInfo di = Directory.CreateDirectory(path); // creates the folder
                 string folder = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "\\" + "notes\\" + "notes.txt"; // string that gets the path, allocated to the documents folder
                 StreamWriter Notes = new StreamWriter(folder, append: true); // declares the streamwriter, file location and allowing it to overwrite
@@ -47,19 +47,18 @@ namespace StickyNotex
                 Notes.WriteLine(notes); // writes the text
                 Notes.Close(); // closes the streamwriter
                 MessageBox.Show("Your note has been saved.", "Succes!"); // messagebox for succes
-                Application.Restart(); // restarts application
-
+                Application.Restart(); // restarts application to "sync changes"
             }
         }
 
         private void deletenote_Click(object sender, EventArgs e)
         {
-            string path = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "\\" + "notes\\"; // sets a string to locate the user name, and location to the ,atj
+            string path = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "\\" + "notes\\"; // sets a string to locate the document folder and notes folder
             DirectoryInfo di = Directory.CreateDirectory(path); // creates the folder
             string folder = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "\\" + "notes\\" + "notes.txt"; // string for the folder location
             File.WriteAllText(folder, string.Empty); // clears all the test
             MessageBox.Show("Everything has been erased!", "succes"); //messagebox for succes
-            Application.Restart(); // restarts application
+            Application.Restart(); // restarts application to "sync changes"
         }
     }
 }
