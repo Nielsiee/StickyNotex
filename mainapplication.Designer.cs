@@ -63,7 +63,7 @@
             this.deletenote.TabIndex = 3;
             this.deletenote.Text = "Delete your notes";
             this.deletenote.UseVisualStyleBackColor = false;
-            this.deletenote.Click += new System.EventHandler(this.button1_Click);
+            this.deletenote.Click += new System.EventHandler(this.deletenote_Click);
             // 
             // welcometxt
             // 

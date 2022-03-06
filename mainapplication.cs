@@ -1,14 +1,14 @@
-﻿using System;
+﻿using Microsoft.VisualBasic;
+using System;
 using System.IO;
 using System.Windows.Forms;
-using Microsoft.VisualBasic;
 namespace StickyNotex
 {
     public partial class mainapplication : Form
     {
         public mainapplication()
         {
-            InitializeComponent(); 
+            InitializeComponent();
         }
 
         private void mainapplication_Load(object sender, EventArgs e) // tells what the "application" to do on startup
